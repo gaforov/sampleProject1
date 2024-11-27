@@ -1,0 +1,8 @@
+2024-11-27 00:55:37 INFO: Test suite started: sampleProject1
+2024-11-27 00:55:39 INFO: Browser launched: edge
+2024-11-27 00:55:40 INFO: Executing test: testInvalidUsername
+2024-11-27 00:55:40 FAILED: Test failed: testInvalidUsername
+2024-11-27 00:55:40 ERROR: Reason: java.lang.AssertionError: Error message does not match for invalid username. expected [Your username is invalid!] but found []
+2024-11-27 00:55:40 INFO: Quitting the browser...
+2024-11-27 00:55:45 INFO: Browser quit successfully.
+2024-11-27 00:55:45 INFO: Test suite finished: sampleProject1

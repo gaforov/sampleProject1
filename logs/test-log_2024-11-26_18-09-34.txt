@@ -1,0 +1,5 @@
+2024-11-26 18:09:37 INFO: Executing test: testInvalidPassword
+2024-11-26 18:09:37 FAILED: Test failed: testInvalidPassword
+2024-11-26 18:09:37 ERROR: Reason: Error message does not match for invalid password. expected [Your password is invalid!] but found []
+2024-11-26 18:09:42 INFO: Test suite finished: Default Suite
+2024-11-26 18:09:42 INFO: Renamed log file to reflect status: logs/test-log_LoginTest_2024-11-26_18-09-34_FAILED.txt
