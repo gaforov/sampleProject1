@@ -1,5 +1,0 @@
-2024-11-26 17:46:43 INFO: Test suite started: sampleProject1
-2024-11-26 17:46:46 INFO: Executing test: testInvalidUsername
-2024-11-26 17:46:46 FAILED: Test failed: testInvalidUsername
-2024-11-26 17:46:46 ERROR: Reason: Error message does not match for invalid username. expected [Your username is invalid!] but found []
-2024-11-26 17:46:51 INFO: Test suite finished: sampleProject1

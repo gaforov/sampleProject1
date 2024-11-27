@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 
 public class SimpleLogger {
     //Simple logger that prints to console only.
@@ -22,59 +23,84 @@ public class SimpleLogger {
 //    }
 
     // Advanced logger, exporting to external file.
+    private static final String LOG_DIRECTORY = "logs";
+    private static final int MAX_LOG_FILES = 20; // Keep the most recent 20 log files
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
     private static BufferedWriter writer;
-    private static String logFileName;
-    private static boolean anyTestFailed = false;
-
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private static String logFileName; // Current log file name
 
     public static void initialize(String testClassName) {
         try {
-            LocalDateTime now = LocalDateTime.now();
-            logFileName = "logs/test-log_" + testClassName + "_" + now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss")) + ".txt";
-            writer = new BufferedWriter(new FileWriter(new File(logFileName)));
+            File logDir = new File(LOG_DIRECTORY);
+            if (!logDir.exists()) {
+                logDir.mkdirs();
+            }
+
+            // Create log file without "IN_PROGRESS" suffix
+            logFileName = String.format("test-log_%s_%s.txt", testClassName,
+                    LocalDateTime.now().format(formatter));
+
+            File logFile = new File(logDir, logFileName);
+            writer = new BufferedWriter(new FileWriter(logFile));
+
+            // Clean up old log files
+            cleanUpOldLogs();
         } catch (IOException e) {
-            System.err.println("Failed to initialize logger: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
     public static void log(String level, String message) {
-        String timestamp = LocalDateTime.now().format(formatter);
-        String logEntry = timestamp + " " + level + ": " + message;
-
+        if (writer == null) {
+            throw new IllegalStateException("Logger is not initialized. Call initialize() first.");
+        }
         try {
-            if (writer != null) {
-                writer.write(logEntry);
-                writer.newLine();
-            }
-            System.out.println(logEntry); // Log to console
+            String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            String logMessage = timestamp + " " + level + ": " + message;
+            System.out.println(logMessage); // Print to console
+            writer.write(logMessage);
+            writer.newLine();
+            writer.flush();
         } catch (IOException e) {
-            System.err.println("Failed to write to log file: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
-    public static void setTestFailed(boolean testFailed) {
-        anyTestFailed = anyTestFailed || testFailed;
-    }
-
-    public static void finalizeLogger() {
-        try {
-            if (writer != null) {
+    public static void finalizeLogger(String finalStatus) {
+        if (writer != null) {
+            try {
                 writer.close();
-                appendStatusToLogFileName();
+
+                // Rename log file to include the final status
+                if (!logFileName.contains(finalStatus)) {
+                    File oldFile = new File(LOG_DIRECTORY + "/" + logFileName);
+                    String newLogFileName = logFileName.replace(".txt", "_" + finalStatus + ".txt");
+                    File newFile = new File(LOG_DIRECTORY + "/" + newLogFileName);
+                    if (oldFile.renameTo(newFile)) {
+                        logFileName = newLogFileName; // Update the logFileName to the new name
+                    } else {
+                        System.err.println("Failed to rename log file to include final status.");
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            System.err.println("Failed to close logger: " + e.getMessage());
         }
     }
 
-    private static void appendStatusToLogFileName() {
-        if (logFileName != null) {
-            File oldFile = new File(logFileName);
-            String newFileName = logFileName.replace(".txt", (anyTestFailed ? "_FAILED" : "_PASSED") + ".txt");
-            File newFile = new File(newFileName);
-            if (!oldFile.renameTo(newFile)) {
-                System.err.println("Failed to rename log file.");
+    private static void cleanUpOldLogs() {
+        File logDir = new File(LOG_DIRECTORY);
+        if (logDir.exists()) {
+            File[] logFiles = logDir.listFiles((dir, name) -> name.endsWith(".txt"));
+            if (logFiles != null && logFiles.length > MAX_LOG_FILES) {
+                Arrays.sort(logFiles, (f1, f2) -> Long.compare(f2.lastModified(), f1.lastModified()));
+                for (int i = MAX_LOG_FILES; i < logFiles.length; i++) {
+                    try {
+                        Files.delete(logFiles[i].toPath());
+                    } catch (IOException e) {
+                        System.err.println("Failed to delete old log file: " + logFiles[i].getName());
+                    }
+                }
             }
         }
     }

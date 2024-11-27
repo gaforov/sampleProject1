@@ -1,8 +1,0 @@
-2024-11-27 00:54:34 INFO: Test suite started: sampleProject1
-2024-11-27 00:54:36 INFO: Browser launched: edge
-2024-11-27 00:54:37 INFO: Executing test: testSkip
-2024-11-27 00:54:37 SKIPPED: Test skipped: testSkip
-2024-11-27 00:54:37 INFO: Reason: org.testng.SkipException: Skipping this test for demonstration purposes.
-2024-11-27 00:54:37 INFO: Quitting the browser...
-2024-11-27 00:54:41 INFO: Browser quit successfully.
-2024-11-27 00:54:41 INFO: Test suite finished: sampleProject1

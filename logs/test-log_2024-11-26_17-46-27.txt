@@ -1,4 +1,0 @@
-2024-11-26 17:46:27 INFO: Test suite started: sampleProject1
-2024-11-26 17:46:31 INFO: Executing test: testValidLogin
-2024-11-26 17:46:31 PASSED: Test passed: testValidLogin
-2024-11-26 17:46:35 INFO: Test suite finished: sampleProject1

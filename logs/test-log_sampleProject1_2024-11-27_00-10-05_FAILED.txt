@@ -1,8 +1,0 @@
-2024-11-27 00:10:05 INFO: Test suite started: sampleProject1
-2024-11-27 00:10:07 INFO: Browser launched: edge
-2024-11-27 00:10:08 INFO: Executing test: testInvalidPassword
-2024-11-27 00:10:08 FAILED: Test failed: testInvalidPassword
-2024-11-27 00:10:08 ERROR: Reason: java.lang.AssertionError: Error message does not match for invalid password. expected [Your password is invalid!] but found []
-2024-11-27 00:10:08 INFO: Quitting the browser...
-2024-11-27 00:10:13 INFO: Browser quit successfully.
-2024-11-27 00:10:13 INFO: Test suite finished: sampleProject1

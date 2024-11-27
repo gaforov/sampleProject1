@@ -20,7 +20,7 @@ public class BrowserManager {
         PropertiesUtil.loadProperties(System.getProperty("user.dir") + "/src/test/resources/configs/config.properties");
 
         if (driver == null) { // Avoid reinitializing if a session is already active
-            String browser = PropertiesUtil.getProperty("browser");
+            String browser = PropertiesUtil.getProperty("browser").toLowerCase();
 
             switch (browser) {
                 case "chrome" -> driver = new ChromeDriver();
@@ -28,7 +28,7 @@ public class BrowserManager {
                 default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
             }
 
-            log("INFO", "Browser launched: " + browser);
+            log("INFO", "Browser launched: " + browser.toUpperCase());
             driver.manage().window().maximize();
             driver.get(PropertiesUtil.getProperty("url"));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

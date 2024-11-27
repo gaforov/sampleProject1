@@ -1,5 +1,0 @@
-2024-11-27 00:02:41 INFO: Executing test: testValidLogin
-2024-11-27 00:02:42 PASSED: Test passed: testValidLogin
-2024-11-27 00:02:42 INFO: Quitting the browser...
-2024-11-27 00:02:46 INFO: Browser quit successfully.
-2024-11-27 00:02:46 INFO: Test suite finished: Default Suite

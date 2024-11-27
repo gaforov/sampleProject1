@@ -5,17 +5,15 @@ import utils.SimpleLogger;
 
 import java.util.Arrays;
 
-public class TestLoggerListener implements ITestListener {
-    @Override
-    public void onStart(ITestContext context) {
-        String testClassName = context.getCurrentXmlTest().getName();
-        SimpleLogger.initialize(testClassName);
-        SimpleLogger.log("INFO", "Test suite started: " + context.getName());
-    }
+public class TestLoggerListener extends TestListenerAdapter {
+    private boolean hasFailures = false;
+    private boolean hasSkips = false;
 
     @Override
-    public void onTestStart(ITestResult result) {
-        SimpleLogger.log("INFO", "Executing test: " + result.getName());
+    public void onStart(ITestContext context) {
+        String testClassName = context.getAllTestMethods()[0].getTestClass().getName();
+        SimpleLogger.initialize(testClassName);
+        SimpleLogger.log("INFO", "Test suite started: " + context.getName());
     }
 
     @Override
@@ -25,20 +23,21 @@ public class TestLoggerListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
+        hasFailures = true;
         SimpleLogger.log("FAILED", "Test failed: " + result.getName());
-        SimpleLogger.log("ERROR", "Reason: " + result.getThrowable());
-        SimpleLogger.setTestFailed(true);
+        SimpleLogger.log("ERROR", "Reason: " + result.getThrowable().getMessage());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
+        hasSkips = true;
         SimpleLogger.log("SKIPPED", "Test skipped: " + result.getName());
-        SimpleLogger.log("INFO", "Reason: " + result.getThrowable());
     }
 
     @Override
     public void onFinish(ITestContext context) {
+        String finalStatus = hasFailures ? "FAILED" : (hasSkips ? "SKIPPED" : "PASSED");
         SimpleLogger.log("INFO", "Test suite finished: " + context.getName());
-        SimpleLogger.finalizeLogger();
+        SimpleLogger.finalizeLogger(finalStatus);
     }
 }
