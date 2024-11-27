@@ -5,6 +5,8 @@ import utils.SimpleLogger;
 
 import java.util.Arrays;
 
+import static utils.GlobalUtils.captureScreenshot;
+
 public class TestLoggerListener extends TestListenerAdapter {
     private boolean hasFailures = false;
     private boolean hasSkips = false;
@@ -26,6 +28,9 @@ public class TestLoggerListener extends TestListenerAdapter {
         hasFailures = true;
         SimpleLogger.log("FAILED", "Test failed: " + result.getName());
         SimpleLogger.log("ERROR", "Reason: " + result.getThrowable().getMessage());
+
+        // Capture screenshot on failure
+        captureScreenshot(result.getName());
     }
 
     @Override

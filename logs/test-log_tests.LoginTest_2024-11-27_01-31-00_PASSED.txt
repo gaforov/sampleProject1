@@ -1,0 +1,6 @@
+2024-11-27 01:31:00 INFO: Test suite started: sampleProject1
+2024-11-27 01:31:04 INFO: Browser launched: EDGE
+2024-11-27 01:31:05 PASSED: Test passed: testInvalidPassword
+2024-11-27 01:31:05 INFO: Quitting the browser...
+2024-11-27 01:31:09 INFO: Browser quit successfully.
+2024-11-27 01:31:09 INFO: Test suite finished: sampleProject1

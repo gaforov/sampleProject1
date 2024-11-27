@@ -1,0 +1,7 @@
+2024-11-27 02:05:33 INFO: Test suite started: sampleProject1
+2024-11-27 02:05:37 INFO: Browser launched: EDGE
+2024-11-27 02:05:38 FAILED: Test failed: testInvalidPassword
+2024-11-27 02:05:38 ERROR: Reason: Error message does not match for invalid password. expected [Your password is invalid!123] but found [Your password is invalid!]
+2024-11-27 02:05:39 INFO: Quitting the browser...
+2024-11-27 02:05:43 INFO: Browser quit successfully.
+2024-11-27 02:05:43 INFO: Test suite finished: sampleProject1

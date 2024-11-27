@@ -23,7 +23,7 @@ public class LoginTest extends BrowserManager {
         Assert.assertEquals(actualLoginMessage, expectedLoginMessage, "Incorrect Login Message.");
     }
 
-    //@Test
+    @Test
     public void testInvalidUsername() {
         String actualErrorMessage;
         String expectedErrorMessage = "Your username is invalid!";
@@ -32,7 +32,7 @@ public class LoginTest extends BrowserManager {
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error message does not match for invalid username.");
     }
 
-    //@Test
+    @Test
     public void testInvalidPassword() throws InterruptedException {
         String actualErrorMessage;
         String expectedErrorMessage = "Your password is invalid!";
