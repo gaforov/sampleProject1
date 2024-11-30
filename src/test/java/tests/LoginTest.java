@@ -9,6 +9,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static base.PageInitializer.loginPage;
+import static base.PageInitializer.loginPage2;
 import static utils.GlobalUtils.waitForVisibility;
 
 @Listeners(TestLoggerListener.class)
@@ -20,6 +21,15 @@ public class LoginTest extends BrowserManager {
         String expectedLoginMessage = "Logged In Successfully";
         loginPage.loginToApplication("student", "Password123");
         actualLoginMessage = loginPage.loginSuccessMessage.getText();
+        Assert.assertEquals(actualLoginMessage, expectedLoginMessage, "Incorrect Login Message.");
+    }
+
+    @Test
+    public void testValidLogin2() { // new Page approach, without PageFactory/FindBy used for this test case.
+        String actualLoginMessage;
+        String expectedLoginMessage = "Logged In Successfully";
+        loginPage2.loginToApplication("student", "Password123");
+        actualLoginMessage = loginPage2.getLoginSuccessMessage().getText();
         Assert.assertEquals(actualLoginMessage, expectedLoginMessage, "Incorrect Login Message.");
     }
 

@@ -6,6 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.GlobalUtils;
 
+/* Remember: Defining related locators and methods within their own page(s) is also known as:
+    "single responsibility principle" (locators and actions are grouped logically).
+*/
 public class LoginPage {
 
     // web elements ( no need for dedicated PageFactory Class, this is more organized per page)
@@ -42,5 +45,29 @@ public class LoginPage {
         passwordField.sendKeys(password);
         submitButton.click();
     }
+
+    /* Alternative Option. Group Actions into Fluent Methods
+    For a simpler, more fluent API, you could chain actions for common flows.
+    This is useful for improving readability in tests.*/
+
+    public LoginPage enterUsername(String username) {
+        usernameField.sendKeys(username);
+        return this;
+    }
+
+    public LoginPage enterPassword(String password) {
+        passwordField.sendKeys(password);
+        return this;
+    }
+
+    public void clickSubmit() {
+        submitButton.click();
+    }
+
+    // Usage in Tests:
+//    loginPage.enterUsername("testuser")
+//            .enterPassword("password123")
+//         .clickSubmit();
+
 
 }
