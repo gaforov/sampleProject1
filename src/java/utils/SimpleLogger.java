@@ -1,14 +1,10 @@
 package utils;
 
-import listeners.TestLoggerListener;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -24,7 +20,7 @@ public class SimpleLogger {
 
     // Advanced logger, exporting to external file.
     private static final String LOG_DIRECTORY = "logs";
-    private static final int MAX_LOG_FILES = 20; // Keep the most recent 20 log files
+    private static final int MAX_LOG_FILES = 20; // todo: Keep the most recent 20 log files
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
     private static BufferedWriter writer;
     private static String logFileName; // Current log file name

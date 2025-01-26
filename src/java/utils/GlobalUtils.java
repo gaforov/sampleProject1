@@ -68,6 +68,18 @@ public class GlobalUtils extends BrowserManager {
         }
     }
 
+    /**
+     * Cleans up old screenshot files from the "logs/screenshots" directory.
+     * <p>
+     * This method ensures only the 20 most recent screenshot files are retained.
+     * It identifies the files with a `.png` extension in the directory,
+     * sorts them by last modified date (oldest first), and deletes any files
+     * exceeding the most recent 20. Log messages indicate the success or failure
+     * of each deletion operation.
+     * <p>
+     * If the directory does not exist or if there are 20 or fewer screenshots,
+     * no action is taken.
+     */
     public static void cleanUpOldScreenshots() {
         File screenshotsDir = new File("logs/screenshots");
         if (screenshotsDir.exists() && screenshotsDir.isDirectory()) {

@@ -2,7 +2,6 @@ package tests;
 
 import base.BrowserManager;
 import listeners.TestLoggerListener;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.Listeners;
@@ -10,7 +9,6 @@ import org.testng.annotations.Test;
 
 import static base.PageInitializer.loginPage;
 import static base.PageInitializer.loginPage2;
-import static utils.GlobalUtils.waitForVisibility;
 
 @Listeners(TestLoggerListener.class)
 public class LoginTest extends BrowserManager {

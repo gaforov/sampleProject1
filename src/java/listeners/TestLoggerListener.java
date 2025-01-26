@@ -3,8 +3,6 @@ package listeners;
 import org.testng.*;
 import utils.SimpleLogger;
 
-import java.util.Arrays;
-
 import static utils.GlobalUtils.captureScreenshot;
 
 public class TestLoggerListener extends TestListenerAdapter {

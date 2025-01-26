@@ -32,7 +32,6 @@ public class LoginPage {
     }
 
 
-
     // methods specific to this page (methods that interact in this page)
 
     public String getLoginErrorMessage(int timeoutInSeconds) {

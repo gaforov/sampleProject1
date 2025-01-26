@@ -1,6 +1,0 @@
-2024-11-27 01:31:15 INFO: Test suite started: sampleProject1
-2024-11-27 01:31:19 INFO: Browser launched: EDGE
-2024-11-27 01:31:20 SKIPPED: Test skipped: testSkip
-2024-11-27 01:31:20 INFO: Quitting the browser...
-2024-11-27 01:31:25 INFO: Browser quit successfully.
-2024-11-27 01:31:25 INFO: Test suite finished: sampleProject1
