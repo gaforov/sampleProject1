@@ -1,0 +1,4 @@
+2025-03-20 13:51:38 INFO: Test suite started: sampleProject1
+2025-03-20 13:51:40 SKIPPED: Test skipped: testInvalidPassword
+2025-03-20 13:51:40 INFO: No active browser session to quit.
+2025-03-20 13:51:40 INFO: Test suite finished: sampleProject1

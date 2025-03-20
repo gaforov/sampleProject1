@@ -17,6 +17,8 @@ public class BrowserManager {
     @BeforeMethod(alwaysRun = true)
     public WebDriver startBrowser() {
         if (driver == null) { // Avoid reinitializing if a session is already active
+            System.setProperty("webdriver.http.factory", "jdk-http-client"); // Applies to all browsers, Ensures compatibility with SeleniumManager as of Selenium 4.6.0 and later
+
             String browser = PropertiesUtil.getProperty("browser").toLowerCase();
 
             switch (browser) {

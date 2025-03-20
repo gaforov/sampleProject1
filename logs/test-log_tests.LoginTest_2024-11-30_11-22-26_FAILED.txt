@@ -1,7 +1,0 @@
-2024-11-30 11:22:26 INFO: Test suite started: sampleProject1
-2024-11-30 11:22:28 INFO: Browser launched: EDGE
-2024-11-30 11:22:31 FAILED: Test failed: testValidLogin2
-2024-11-30 11:22:31 ERROR: Reason: null
-2024-11-30 11:22:31 INFO: Quitting the browser...
-2024-11-30 11:22:35 INFO: Browser quit successfully.
-2024-11-30 11:22:35 INFO: Test suite finished: sampleProject1
