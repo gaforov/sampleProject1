@@ -15,6 +15,7 @@ src/
 │   └── testData/            # Test data files (e.g., CSV, JSON, Excel files)
 │
 ├── logs/                    # Logs directory for runtime-generated logs
+│   └── screenshots/         # Captured screenshots during test execution
 ├── pom.xml                  # Maven configuration file for dependencies and build
 └── .gitignore               # Specifies files and directories to exclude from version control
 ```

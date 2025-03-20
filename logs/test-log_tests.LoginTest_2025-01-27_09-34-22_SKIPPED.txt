@@ -1,0 +1,22 @@
+2025-01-27 09:34:22 INFO: Test suite started: sampleProject1
+2025-01-27 09:34:26 INFO: Browser launched: EDGE
+2025-01-27 09:34:27 PASSED: Test passed: testInvalidPassword
+2025-01-27 09:34:27 INFO: Quitting the browser...
+2025-01-27 09:34:30 INFO: Browser quit successfully.
+2025-01-27 09:34:33 INFO: Browser launched: EDGE
+2025-01-27 09:34:34 PASSED: Test passed: testInvalidUsername
+2025-01-27 09:34:34 INFO: Quitting the browser...
+2025-01-27 09:34:38 INFO: Browser quit successfully.
+2025-01-27 09:34:40 INFO: Browser launched: EDGE
+2025-01-27 09:34:41 SKIPPED: Test skipped: testSkip
+2025-01-27 09:34:41 INFO: Quitting the browser...
+2025-01-27 09:34:44 INFO: Browser quit successfully.
+2025-01-27 09:34:47 INFO: Browser launched: EDGE
+2025-01-27 09:34:48 PASSED: Test passed: testValidLogin
+2025-01-27 09:34:48 INFO: Quitting the browser...
+2025-01-27 09:34:52 INFO: Browser quit successfully.
+2025-01-27 09:34:54 INFO: Browser launched: EDGE
+2025-01-27 09:34:56 PASSED: Test passed: testValidLogin2
+2025-01-27 09:34:56 INFO: Quitting the browser...
+2025-01-27 09:34:59 INFO: Browser quit successfully.
+2025-01-27 09:34:59 INFO: Test suite finished: sampleProject1

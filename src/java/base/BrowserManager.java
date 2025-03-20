@@ -16,9 +16,6 @@ public class BrowserManager {
 
     @BeforeMethod(alwaysRun = true)
     public WebDriver startBrowser() {
-        // Load properties
-        PropertiesUtil.loadProperties(System.getProperty("user.dir") + "/src/resources/configs/config.properties");
-
         if (driver == null) { // Avoid reinitializing if a session is already active
             String browser = PropertiesUtil.getProperty("browser").toLowerCase();
 
@@ -43,7 +40,6 @@ public class BrowserManager {
         if (driver != null) {
             try {
                 log("INFO", "Quitting the browser...");
-                Thread.sleep(2000); // Add wait before quitting for stability
                 driver.quit();
                 log("INFO", "Browser quit successfully.");
             } catch (Exception e) {
