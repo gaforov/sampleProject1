@@ -33,7 +33,7 @@ public class BrowserManager {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
 
-        PageInitializer.initializePage();
+//        PageInitializer.initializePage();
         return driver;
     }
 

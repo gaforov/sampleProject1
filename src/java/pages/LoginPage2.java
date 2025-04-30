@@ -5,8 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-/*
-Why this Approach (without PageFactory/FindBy) Is Better:
+/* Why this Approach (without PageFactory/FindBy) Is Better:
 
    • Projects where the UI is dynamic, with frequent DOM updates or asynchronous loading.
    • Teams that prefer explicit control over element initialization.

@@ -1,0 +1,22 @@
+2025-04-25 08:10:37 INFO: Test suite started: sampleProject1
+2025-04-25 08:10:40 INFO: Browser launched: CHROME
+2025-04-25 08:10:42 PASSED: Test passed: testInvalidPassword
+2025-04-25 08:10:42 INFO: Quitting the browser...
+2025-04-25 08:10:42 INFO: Browser quit successfully.
+2025-04-25 08:10:47 INFO: Browser launched: CHROME
+2025-04-25 08:10:48 PASSED: Test passed: testInvalidUsername
+2025-04-25 08:10:48 INFO: Quitting the browser...
+2025-04-25 08:10:49 INFO: Browser quit successfully.
+2025-04-25 08:10:50 INFO: Browser launched: CHROME
+2025-04-25 08:10:50 SKIPPED: Test skipped: testSkip
+2025-04-25 08:10:50 INFO: Quitting the browser...
+2025-04-25 08:10:51 INFO: Browser quit successfully.
+2025-04-25 08:10:52 INFO: Browser launched: CHROME
+2025-04-25 08:10:53 PASSED: Test passed: testValidLogin
+2025-04-25 08:10:53 INFO: Quitting the browser...
+2025-04-25 08:10:54 INFO: Browser quit successfully.
+2025-04-25 08:10:55 INFO: Browser launched: CHROME
+2025-04-25 08:10:56 PASSED: Test passed: testValidLogin2
+2025-04-25 08:10:56 INFO: Quitting the browser...
+2025-04-25 08:10:56 INFO: Browser quit successfully.
+2025-04-25 08:10:56 INFO: Test suite finished: sampleProject1

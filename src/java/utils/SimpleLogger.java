@@ -10,17 +10,18 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 public class SimpleLogger {
-    //Simple logger that prints to console only.
-//    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//    Simple logger that prints to console only:
+
+//    Private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 //
 //    public static void log(String level, String message) {
 //        String timestamp = LocalDateTime.now().format(formatter);
 //        System.out.println(timestamp + " " + level + ": " + message);
 //    }
 
-    // Advanced logger, exporting to external file.
+    // Advanced logger, exporting to an external file.
     private static final String LOG_DIRECTORY = "logs";
-    private static final int MAX_LOG_FILES = 20; // todo: Keep the most recent 20 log files
+    private static final int MAX_LOG_FILES = 50; // todo: Keep the most recent N log files
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
     private static BufferedWriter writer;
     private static String logFileName; // Current log file name

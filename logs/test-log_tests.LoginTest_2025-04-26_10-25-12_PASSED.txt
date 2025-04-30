@@ -1,0 +1,4 @@
+2025-04-26 10:25:12 INFO: Test suite started: sampleProject1
+2025-04-26 10:25:14 INFO: Browser launched: CHROME
+2025-04-26 10:25:15 PASSED: Test passed: testValidLogin
+2025-04-26 10:25:15 INFO: Test suite finished: sampleProject1
