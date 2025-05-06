@@ -17,3 +17,4 @@ public class SuccessLoginPage extends BasePage {
         getDriver().findElement(logoutButton).click();
     }
 }
+

@@ -18,5 +18,10 @@ public class PageInitializer {
         loginPage3 = new LoginPage3();  // newest approach, no PageFactory, boilerplate reduced by moving some logic to BasePage
         successLoginPage = new SuccessLoginPage();
     }
-
 }
+
+
+
+
+
+
