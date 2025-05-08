@@ -1,0 +1,7 @@
+2025-05-07 13:51:19 INFO: Test suite started: sampleProject1
+2025-05-07 13:51:21 INFO: Browser launched: CHROME
+2025-05-07 13:51:22 FAILED: Test failed: testValidLogin
+2025-05-07 13:51:22 ERROR: Reason: Cannot invoke "pages.LoginPage3.loginToApplication(String, String)" because "tests.LoginTest.loginPage3" is null
+2025-05-07 13:51:22 INFO: Quitting the browser...
+2025-05-07 13:51:23 INFO: Browser quit successfully.
+2025-05-07 13:51:23 INFO: Test suite finished: sampleProject1

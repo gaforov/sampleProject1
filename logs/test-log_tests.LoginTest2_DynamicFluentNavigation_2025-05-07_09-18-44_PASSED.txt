@@ -1,0 +1,6 @@
+2025-05-07 09:18:44 INFO: Test suite started: sampleProject1
+2025-05-07 09:18:46 INFO: Browser launched: CHROME
+2025-05-07 09:18:47 PASSED: Test passed: testValidLogin
+2025-05-07 09:18:47 INFO: Quitting the browser...
+2025-05-07 09:18:47 INFO: Browser quit successfully.
+2025-05-07 09:18:47 INFO: Test suite finished: sampleProject1

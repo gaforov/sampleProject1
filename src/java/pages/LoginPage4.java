@@ -1,11 +1,13 @@
 package pages;
 
-import base.BasePage;
+import base.BrowserManager;
 import org.openqa.selenium.By;
+
+import static utils.GlobalUtils.*;
 
 // Even further Improving Login2 by relocating some heavy-lifting to BasePage. This approach reduces boilerplate.
 
-public class LoginPage4 extends BasePage {
+public class LoginPage4 extends BrowserManager {
 
     // Locators using By (replacing @FindBy)
     private final By usernameField = By.id("username");
@@ -16,22 +18,22 @@ public class LoginPage4 extends BasePage {
     private final By testLoginText = By.cssSelector("#login h2");
 
 
-    // Methods to interact with the Login Page
+    // Methods | Using void type | No need to return a new page object because PageInitializer take care of it.
     public void loginToApplication(String username, String password) {
-        find(usernameField).sendKeys(username);
-        find(passwordField).sendKeys(password);
-        find(submitButton).click();
+        findElement(usernameField).sendKeys(username);
+        findElement(passwordField).sendKeys(password);
+        findElement(submitButton).click();
     }
 
     public String getLoginSuccessMessageText() {
-        return find(loginSuccessMessage).getText();
+        return findElement(loginSuccessMessage).getText();
     }
 
     public String getLoginErrorMessageText() {
-        return find(loginErrorMessage).getText();
+        return findElement(loginErrorMessage).getText();
     }
 
     public String verifyLogOutSuccess() {
-        return find(testLoginText).getText();
+        return findElement(testLoginText).getText();
     }
 }

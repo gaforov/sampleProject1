@@ -7,7 +7,7 @@ import org.testng.SkipException;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-//import static base.PageInitializer.*;
+import static base.PageInitializer.*;
 
 @Listeners(TestLoggerListener.class)
 public class LoginTest extends BrowserManager {
@@ -20,9 +20,9 @@ public class LoginTest extends BrowserManager {
 //        actualLoginMessage = loginPage.loginSuccessMessage.getText();
 
         // loginPage3 without PageInitializer fails.
-//        loginPage3.loginToApplication("student", "Password123");
-//        actualLoginMessage = loginPage3.getLoginSuccessMessageText();
-//        Assert.assertEquals(actualLoginMessage, expectedLoginMessage, "Incorrect Login Message.");
+        loginPage3.loginToApplication("student", "Password123");
+        actualLoginMessage = loginPage3.getLoginSuccessMessageText();
+        Assert.assertEquals(actualLoginMessage, expectedLoginMessage, "Incorrect Login Message.");
     }
 
     @Test

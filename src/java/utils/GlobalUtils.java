@@ -1,6 +1,7 @@
 package utils;
 
 import base.BrowserManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -17,7 +18,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class GlobalUtils extends BrowserManager {
+import static base.BrowserManager.getDriver;
+
+public class GlobalUtils {
     // Centralized method to create a WebDriverWait instance
     private static WebDriverWait createWait(int timeoutInSeconds) {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(timeoutInSeconds));
@@ -98,4 +101,9 @@ public class GlobalUtils extends BrowserManager {
             }
         }
     }
+
+    public static WebElement findElement(By locator) {
+        return BrowserManager.getDriver().findElement(locator);
+    }
+
 }
