@@ -1,4 +1,4 @@
-package tests;
+package tests.legacy;
 import java.util.Objects;
 
 public class CustomerOne {

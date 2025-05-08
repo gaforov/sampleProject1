@@ -1,21 +1,23 @@
 package base;
 
-import pages.LoginPage;
-import pages.LoginPage2;
-import pages.LoginPage3;
-import pages.SuccessLoginPage;
+import pages.*;
+import pages.legacy.LoginPage_Fluent;
+import pages.legacy.LoginPage_Manual_Locator;
+import pages.legacy.LoginPage_PF;
 
 public class PageInitializer {
+    public static LoginPage_PF loginPagePF;
+    public static LoginPage_Manual_Locator loginPage2;
+    public static LoginPage_Fluent loginPageFluent;
     public static LoginPage loginPage;
-    public static LoginPage2 loginPage2;
-    public static LoginPage3 loginPage3;
     public static SuccessLoginPage successLoginPage;
 
 
     public static void initializePage() {
-        loginPage = new LoginPage();
-        loginPage2 = new LoginPage2();  // new approach, no PageFactory
-        loginPage3 = new LoginPage3();  // newest approach, no PageFactory, boilerplate reduced by moving some logic to BasePage
+        loginPagePF = new LoginPage_PF();
+        loginPage2 = new LoginPage_Manual_Locator();  // new approach, no PageFactory
+        loginPageFluent = new LoginPage_Fluent();  // newest approach, no PageFactory, Fluent Wait
+        loginPage = new LoginPage();  // newest approach, no PageFactory, PageInitializer (installed of Fluent Wait)
         successLoginPage = new SuccessLoginPage();
     }
 }

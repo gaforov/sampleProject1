@@ -1,7 +1,7 @@
 2025-05-07 13:45:18 INFO: Test suite started: sampleProject1
 2025-05-07 13:45:20 INFO: Browser launched: CHROME
 2025-05-07 13:45:21 FAILED: Test failed: testValidLogin
-2025-05-07 13:45:21 ERROR: Reason: Cannot invoke "pages.LoginPage3.loginToApplication(String, String)" because "tests.LoginTest.loginPage3" is null
+2025-05-07 13:45:21 ERROR: Reason: Cannot invoke "pages.legacy.LoginPage_Fluent.loginToApplication(String, String)" because "tests.legacy.LoginTest_old.loginPageFluent" is null
 2025-05-07 13:45:22 INFO: Quitting the browser...
 2025-05-07 13:45:22 INFO: Browser quit successfully.
 2025-05-07 13:45:22 INFO: Test suite finished: sampleProject1

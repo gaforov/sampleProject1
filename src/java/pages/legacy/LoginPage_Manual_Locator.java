@@ -1,4 +1,4 @@
-package pages;
+package pages.legacy;
 
 import base.BrowserManager;
 import org.openqa.selenium.By;
@@ -26,10 +26,10 @@ Since PageFactory stores WebElement references, it doesn’t automatically re-lo
 Less Control Over Timing:
 PageFactory doesn’t allow you to handle explicit waits directly when locating elements, making it harder to work with dynamically loaded content.
 */
-public class LoginPage2 {
+public class LoginPage_Manual_Locator {
     private final WebDriver driver;
 
-    public LoginPage2() {
+    public LoginPage_Manual_Locator() {
         this.driver = BrowserManager.getDriver();
     }
 

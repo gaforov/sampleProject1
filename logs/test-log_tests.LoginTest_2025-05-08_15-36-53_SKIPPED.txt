@@ -1,0 +1,6 @@
+2025-05-08 15:36:53 INFO: Test suite started: sampleProject1
+2025-05-08 15:36:54 INFO: Browser launched: CHROME
+2025-05-08 15:36:55 SKIPPED: Test skipped: testSkip
+2025-05-08 15:36:55 INFO: Quitting the browser...
+2025-05-08 15:36:55 INFO: Browser quit successfully.
+2025-05-08 15:36:55 INFO: Test suite finished: sampleProject1

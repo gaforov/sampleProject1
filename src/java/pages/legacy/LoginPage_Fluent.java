@@ -1,13 +1,13 @@
-package pages;
+package pages.legacy;
 
-import base.BrowserManager;
 import org.openqa.selenium.By;
+import pages.SuccessLoginPage;
 
-import static utils.GlobalUtils.findElement;
+import static utils.ElementUtils.find;
 
 // Even further Improving Login2 by relocating some heavy-lifting to BasePage. This approach reduces boilerplate.
 
-public class LoginPage3 extends BrowserManager {
+public class LoginPage_Fluent {
 
     // Locators using By (replacing @FindBy)
     private final By usernameField = By.id("username");
@@ -20,21 +20,21 @@ public class LoginPage3 extends BrowserManager {
 
     // Methods | Fluent Navigation | Return new page object for chaining
     public SuccessLoginPage loginToApplication(String username, String password) {
-        findElement(usernameField).sendKeys(username);
-        findElement(passwordField).sendKeys(password);
-        findElement(submitButton).click();
+        find(usernameField).sendKeys(username);
+        find(passwordField).sendKeys(password);
+        find(submitButton).click();
         return new SuccessLoginPage();
     }
 
     public String getLoginSuccessMessageText() {
-        return findElement(loginSuccessMessage).getText();
+        return find(loginSuccessMessage).getText();
     }
 
     public String getLoginErrorMessageText() {
-        return findElement(loginErrorMessage).getText();
+        return find(loginErrorMessage).getText();
     }
 
     public String verifyLogOutSuccess() {
-        return findElement(testLoginText).getText();
+        return find(testLoginText).getText();
     }
 }

@@ -1,4 +1,4 @@
-package tests;
+package tests.legacy;
 
 import base.BrowserManager;
 import listeners.TestLoggerListener;
@@ -6,10 +6,9 @@ import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pages.LoginPage3;
+import pages.legacy.LoginPage_Fluent;
 
-import static base.PageInitializer.loginPage;
-import static base.PageInitializer.loginPage2;
+import static base.PageInitializer.*;
 
 
 @Listeners(TestLoggerListener.class)
@@ -20,9 +19,9 @@ public class LoginTest2_DynamicFluentNavigation extends BrowserManager {
         String actualLoginMessage;
         String expectedLoginMessage = "Logged In Successfully";
 
-        LoginPage3 loginPage3 = new LoginPage3();
-        var SuccessLoginPage = loginPage3.loginToApplication("student", "Password123");
-        actualLoginMessage = loginPage3.getLoginSuccessMessageText();
+        LoginPage_Fluent loginPageFluent = new LoginPage_Fluent();
+        var SuccessLoginPage = loginPageFluent.loginToApplication("student", "Password123");
+        actualLoginMessage = loginPageFluent.getLoginSuccessMessageText();
         Assert.assertEquals(actualLoginMessage, expectedLoginMessage, "Incorrect Login Message.");
     }
 
@@ -39,8 +38,8 @@ public class LoginTest2_DynamicFluentNavigation extends BrowserManager {
     public void testInvalidUsername() {
         String actualErrorMessage;
         String expectedErrorMessage = "Your username is invalid!";
-        loginPage.loginToApplication("wrongUser", "Password123"); // Invalid username, valid password
-        actualErrorMessage = loginPage.getLoginErrorMessage(5);
+        loginPagePF.loginToApplication("wrongUser", "Password123"); // Invalid username, valid password
+        actualErrorMessage = loginPage.getLoginErrorMessageText();
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error message does not match for invalid username.");
     }
 
@@ -48,8 +47,8 @@ public class LoginTest2_DynamicFluentNavigation extends BrowserManager {
     public void testInvalidPassword() throws InterruptedException {
         String actualErrorMessage;
         String expectedErrorMessage = "Your password is invalid!";
-        loginPage.loginToApplication("student", "wrongPassword"); // Valid username, invalid password
-        actualErrorMessage = loginPage.getLoginErrorMessage(5);
+        loginPagePF.loginToApplication("student", "wrongPassword"); // Valid username, invalid password
+        actualErrorMessage = loginPage.getLoginErrorMessageText();
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error message does not match for invalid password.");
     }
 

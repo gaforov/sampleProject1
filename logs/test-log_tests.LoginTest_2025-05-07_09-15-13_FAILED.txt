@@ -1,7 +1,7 @@
 2025-05-07 09:15:13 INFO: Test suite started: sampleProject1
 2025-05-07 09:15:15 INFO: Browser launched: CHROME
 2025-05-07 09:15:15 FAILED: Test failed: testValidLogin
-2025-05-07 09:15:15 ERROR: Reason: Cannot invoke "pages.LoginPage.loginToApplication(String, String)" because "base.PageInitializer.loginPage" is null
+2025-05-07 09:15:15 ERROR: Reason: Cannot invoke "pages.legacy.LoginPage_PF.loginToApplication(String, String)" because "base.PageInitializer.loginPagePF" is null
 2025-05-07 09:15:16 INFO: Quitting the browser...
 2025-05-07 09:15:16 INFO: Browser quit successfully.
 2025-05-07 09:15:16 INFO: Test suite finished: sampleProject1

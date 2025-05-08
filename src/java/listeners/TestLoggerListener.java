@@ -3,7 +3,7 @@ package listeners;
 import org.testng.*;
 import utils.SimpleLogger;
 
-import static utils.GlobalUtils.captureScreenshot;
+import static utils.BrowserUtils.captureScreenshot;
 
 public class TestLoggerListener extends TestListenerAdapter {
     private boolean hasFailures = false;

@@ -1,4 +1,4 @@
-package tests;
+package tests.legacy;
 
 /* By using record class we can eliminate boilerplate used in CustomerOne class */
 record Customer(String name, String email, String phoneNumber) {}
