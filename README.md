@@ -9,7 +9,7 @@ This is a sample Selenium Test Automation framework designed to automate browser
 
 src/
 ├── java/                           # Java source files for the framework (Test sources root)
-│     ├── base/                     # Core framework classes like BrowserManager, PageInitializer
+│     ├── base/                     # Core framework classes
 │     │    ├── BrowserManager       # Manages WebDriver lifecycle using ThreadLocal
 │     │    └── PageInitializer      # Centralized page object instantiation
 │     ├── listeners/                # TestNG listeners for reporting and logging
