@@ -16,13 +16,16 @@ src/
 │     │    └── TestLoggerListener   # Custom TestNG listener for logging
 │     ├── pages/                    # Page Object classes
 │     │    ├── LoginPage            # Page object for login functionality
-│     │    └── SuccessLoginPage     # Page object for successful login
+│     │    ├── SuccessLoginPage     # Page object for successful login
+│     │    └── Etc.                 # Additional page objects
 │     ├── tests/                    # Test case classes
 │     │    ├── LoginTest            # Test cases for login functionality
-│     │    └── SuccessLoginTest     # Test cases for successful login
+│     │    ├── SuccessLoginTest     # Test cases for successful login
+│     │    └── Etc.                 # Additional test classes
 │     └── utils/                    
 │          ├── BrowserUtils          # Browser-related utility methods (e.g., launch profile, switch tabs, etc.)
 │          ├── ElementUtils          # Common element interactions (click, type, etc.)
+│          └── Etc.                  # Additional utility classes
 ├── resources/                       # Resource files for the framework (Test resources root)
 │     ├── configs/                   # Configuration files (e.g., config.properties)
 │     │       └── config.properties  # Centralized test configuration file
