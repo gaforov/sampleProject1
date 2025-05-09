@@ -2,7 +2,9 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import utils.GlobalUtils;
@@ -18,14 +20,21 @@ public class BrowserManager {
     @BeforeMethod(alwaysRun = true)
     public WebDriver startBrowser() {
         if (driver.get() == null) { // Avoid reinitializing if a session is already active
-            System.setProperty("webdriver.http.factory", "jdk-http-client"); // Applies to all browsers, Ensures compatibility with SeleniumManager as of Selenium 4.6.0 and later
-
             String browser = PropertiesUtil.getProperty("browser").toLowerCase();
+            boolean isHeadless = Boolean.parseBoolean(PropertiesUtil.getProperty("headless"));
 
             driver.set(
                     switch (browser) {
-                        case "chrome" -> new ChromeDriver();
-                        case "edge" -> new EdgeDriver();
+                        case "chrome" -> {
+                            ChromeOptions chromeOptions = new ChromeOptions();
+                            if (isHeadless) chromeOptions.addArguments("---headless=new");
+                            yield new ChromeDriver(chromeOptions);
+                        }
+                        case "edge" -> {
+                            EdgeOptions edgeOptions = new EdgeOptions();
+                            if (isHeadless) edgeOptions.addArguments("--headless=new");
+                            yield new EdgeDriver(edgeOptions);
+                        }
                         default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
                     }
             );

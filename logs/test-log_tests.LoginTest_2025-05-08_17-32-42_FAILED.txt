@@ -1,0 +1,7 @@
+2025-05-08 17:32:42 INFO: Test suite started: sampleProject1
+2025-05-08 17:32:44 INFO: Browser launched: CHROME
+2025-05-08 17:32:45 FAILED: Test failed: testInvalidUsername
+2025-05-08 17:32:45 ERROR: Reason: current thread is not owner
+2025-05-08 17:32:46 INFO: Quitting the browser...
+2025-05-08 17:32:46 INFO: Browser quit successfully.
+2025-05-08 17:32:46 INFO: Test suite finished: sampleProject1

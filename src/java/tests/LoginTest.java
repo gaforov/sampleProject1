@@ -8,6 +8,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static base.PageInitializer.*;
+import static utils.GlobalUtils.waitForSeconds;
 
 @Listeners(TestLoggerListener.class)
 public class LoginTest extends BrowserManager {
@@ -23,7 +24,7 @@ public class LoginTest extends BrowserManager {
     }
 
     @Test
-    public void testInvalidUsername() {
+    public void testInvalidUsername() throws InterruptedException {
         String expectedError = "Your username is invalid!";
 
         loginPage.loginToApplication("invalidUser", "Password123");

@@ -1,0 +1,19 @@
+2025-05-08 17:19:54 INFO: Test suite started: sampleProject1
+2025-05-08 17:19:56 INFO: Browser launched: CHROME
+2025-05-08 17:19:57 PASSED: Test passed: testInvalidPassword
+2025-05-08 17:19:57 INFO: Quitting the browser...
+2025-05-08 17:19:57 INFO: Browser quit successfully.
+2025-05-08 17:19:58 INFO: Browser launched: CHROME
+2025-05-08 17:19:59 FAILED: Test failed: testInvalidUsername
+2025-05-08 17:19:59 ERROR: Reason: Invalid username error mismatch. expected [Your username is invalid!] but found []
+2025-05-08 17:20:00 INFO: Quitting the browser...
+2025-05-08 17:20:00 INFO: Browser quit successfully.
+2025-05-08 17:20:01 INFO: Browser launched: CHROME
+2025-05-08 17:20:02 SKIPPED: Test skipped: testSkip
+2025-05-08 17:20:02 INFO: Quitting the browser...
+2025-05-08 17:20:02 INFO: Browser quit successfully.
+2025-05-08 17:20:03 INFO: Browser launched: CHROME
+2025-05-08 17:20:04 PASSED: Test passed: testValidLogin
+2025-05-08 17:20:04 INFO: Quitting the browser...
+2025-05-08 17:20:04 INFO: Browser quit successfully.
+2025-05-08 17:20:04 INFO: Test suite finished: sampleProject1
