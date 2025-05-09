@@ -8,25 +8,25 @@ This is a sample Selenium Test Automation framework designed to automate browser
 ```markdown
 
 src/
-├──── java/                           # Java source files for the framework (Test sources root)
-│       ├── base/                     # Core framework classes like BrowserManager, PageInitializer
-│       │    ├── BrowserManager       # Manages WebDriver lifecycle using ThreadLocal
-│       │    └── PageInitializer      # Centralized page object instantiation
-│       ├── listeners/                # TestNG listeners for reporting and logging
-│       │    └── TestLoggerListener   # Custom TestNG listener for logging
-│       ├── pages/                    # Page Object classes
-│       │    ├── LoginPage            # Page object for login functionality
-│       │    └── SuccessLoginPage     # Page object for successful login
-│       ├── tests/                    # Test case classes
-│       │    ├── LoginTest            # Test cases for login functionality
-│       │    └── SuccessLoginTest     # Test cases for successful login
-│       └── utils/                    
-│            ├── BrowserUtils         # Browser-related utility methods (e.g., launch profile, switch tabs, etc.)
-│            ├── ElementUtils         # Common element interactions (click, type, etc.)
-├──── resources/                      # Resource files for the framework (Test resources root)
-│     ├── configs/                    # Configuration files (e.g., config.properties)
-│     │       └── config.properties   # Centralized test configuration file
-│     └── testData/                   # Test data files (e.g., CSV, JSON, Excel files)
+├── java/                           # Java source files for the framework (Test sources root)
+│     ├── base/                     # Core framework classes like BrowserManager, PageInitializer
+│     │    ├── BrowserManager       # Manages WebDriver lifecycle using ThreadLocal
+│     │    └── PageInitializer      # Centralized page object instantiation
+│     ├── listeners/                # TestNG listeners for reporting and logging
+│     │    └── TestLoggerListener   # Custom TestNG listener for logging
+│     ├── pages/                    # Page Object classes
+│     │    ├── LoginPage            # Page object for login functionality
+│     │    └── SuccessLoginPage     # Page object for successful login
+│     ├── tests/                    # Test case classes
+│     │    ├── LoginTest            # Test cases for login functionality
+│     │    └── SuccessLoginTest     # Test cases for successful login
+│     └── utils/                    
+│          ├── BrowserUtils          # Browser-related utility methods (e.g., launch profile, switch tabs, etc.)
+│          ├── ElementUtils          # Common element interactions (click, type, etc.)
+├── resources/                       # Resource files for the framework (Test resources root)
+│     ├── configs/                   # Configuration files (e.g., config.properties)
+│     │       └── config.properties  # Centralized test configuration file
+│     └── testData/                  # Test data files (e.g., CSV, JSON, Excel files)
 │
 ├── logs/                   # Logs directory for runtime-generated logs
 │   └── screenshots/        # Captured screenshots during test execution
