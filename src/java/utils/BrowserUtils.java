@@ -5,10 +5,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.io.FileHandler;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -110,5 +113,24 @@ public class BrowserUtils {
         }
     }
 
+    /**
+     * Launches Chrome with a specific user profile directory.
+     * Useful for reusing a trusted session and bypassing MFA locally.
+     *
+     * @param userDataDir   Full path to Chrome's user data directory
+     * @param profileName   Profile folder name (e.g., "Default", "Profile 1")
+     * @return A configured ChromeDriver instance
+     */
+    public static WebDriver launchBrowserWithUserProfile(String userDataDir, String profileName) {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("user-data-dir=" + userDataDir);
+        options.addArguments("profile-directory=" + profileName);
+
+        WebDriver driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        System.out.println("✅ Launched Chrome with profile: " + profileName);
+        return driver;
+    }
 
 }

@@ -7,6 +7,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import utils.BrowserUtils;
 import utils.GlobalUtils;
 import utils.PropertiesUtil;
 
@@ -22,6 +23,12 @@ public class BrowserManager {
         if (driver.get() == null) { // Avoid reinitializing if a session is already active
             String browser = PropertiesUtil.getProperty("browser").toLowerCase();
             boolean isHeadless = Boolean.parseBoolean(PropertiesUtil.getProperty("headless"));
+
+            // Use below code (uncomment) when to launch Chrome with a specific user profile. Purpose: with saved cookies to bypass MFA.
+//            String userDataDir = "C:/Users/yourname/AppData/Local/Google/Chrome/User Data";
+//            String profileName = "Profile 1";
+//            driver.set(BrowserUtils.launchBrowserWithUserProfile(userDataDir, profileName));
+//            driver.get().get(PropertiesUtil.getProperty("url"));
 
             driver.set(
                     switch (browser) {
